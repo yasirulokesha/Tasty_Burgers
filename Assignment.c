@@ -274,6 +274,7 @@ int main(){
 
 // Functions
 
+// Burger Ordering
 Burger_Str Burger_order(float total, Burger_Str Burger_main)
 {
     Burger_Str Burgers;
@@ -336,6 +337,7 @@ Burger_Str Burger_order(float total, Burger_Str Burger_main)
     return Burgers;
 }
 
+// Meals Order
 Meals_str Meals_Ordering(float total, Meals_str Meals_main)
 {
     char Choice;
@@ -387,6 +389,41 @@ Meals_str Meals_Ordering(float total, Meals_str Meals_main)
     return Meals;
 };
 
+// Drinks Order
+Drinks_str Drinks_ordering(float Session_total, Drinks_str Drinks_main)
+{
+    float total;
+    Drinks_str Drinks;
+    int qty;
+    printf("You have selected Chips. How many chips you wish you order? ");
+    scanf("%d", &qty);
+    total = 3.50 * qty;
+    Drinks.drinks_description = total;
+    Drinks.min_quantity = qty;
+
+    printf("Your current bill value is $%.2f\n", Session_total+total);
+
+    return Drinks;
+}
+
+// Chips Order
+Chips_str Chips_ordering(float Session_total, Chips_str Chips_main)
+{
+    float total;
+    Chips_str Chips;
+    int qty;
+    printf("You have selected Chips. How many chips you wish you order? ");
+    scanf("%d", &qty);
+    total = 5 * qty;
+    Chips.chips_description = total;
+    Chips.min_weight = qty;
+
+    printf("Your current bill value is $%.2f\n", Session_total+total);
+
+    return Chips;
+}
+
+// Bill Proccess
 int Bill_Process(Burger_Str Burgers, Order Main)
 {
     float total, discount;
@@ -421,36 +458,3 @@ int Bill_Process(Burger_Str Burgers, Order Main)
 
     return total;
 };
-
-Drinks_str Drinks_ordering(float Session_total, Drinks_str Drinks_main)
-{
-    float total;
-    Drinks_str Drinks;
-    int qty;
-    printf("You have selected Chips. How many chips you wish you order? ");
-    scanf("%d", &qty);
-    total = 3.50 * qty;
-    Drinks.drinks_description = total;
-    Drinks.min_quantity = qty;
-
-    printf("Your current bill value is $%.2f\n", Session_total+total);
-
-    return Drinks;
-}
-
-Chips_str Chips_ordering(float Session_total, Chips_str Chips_main)
-{
-    float total;
-    Chips_str Chips;
-    int qty;
-    printf("You have selected Chips. How many chips you wish you order? ");
-    scanf("%d", &qty);
-    total = 5 * qty;
-    Chips.chips_description = total;
-    Chips.min_weight = qty;
-
-    printf("Your current bill value is $%.2f\n", Session_total+total);
-
-    return Chips;
-}
-
