@@ -456,4 +456,4 @@ int Bill_Process(Burger_Str Burgers, Order Main)
     getchar();
 
     return total;
-}
+};
